@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            /* Boxes will stack vertically */
+            justify-content: center;
+            align-items: center;
+            margin: 3rem 5rem;
+        }
+
+        .box-grid {
+            display: flex;
+            margin: 0 auto;
+            width: inherit;
+            height: fit-content;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .box {
+            background-color: #9fc5f8;
+            height: 250px;
+            width: 250px;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Welcome!</h1>
+        <div class="box-grid">
+            {% if times %}
+            {% for i in range(0,times)%}
+            <div class="box" {% if user_color %} style="background-color: {{user_color}};" {% endif %}></div>
+            {% endfor%}
+            {% else %}
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            {% endif %}
+
+        </div>
+    </main>
+</body>
+
+</html>
